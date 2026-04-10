@@ -1,0 +1,43 @@
+{
+    "saved_at": "2026-04-10 07:56:47",
+    "feature_cols": [
+        "match_score",
+        "skill_match_ratio",
+        "num_matched_skills",
+        "num_missing_skills",
+        "num_candidate_skills",
+        "comm_score",
+        "conf_score",
+        "subj_score",
+        "tech_score",
+        "response_len",
+        "sentence_cmplx"
+    ],
+    "label_classes": [
+        "reject",
+        "select"
+    ],
+    "model_scores": {
+        "logistic_regression": {
+            "accuracy": 0.8495147485862754,
+            "f1": 0.9167869279596372,
+            "roc_auc": 0.9627858314564969
+        },
+        "random_forest": {
+            "accuracy": 0.8945819960262876,
+            "f1": 0.9425393130396977,
+            "roc_auc": 0.9678862877316761
+        },
+        "xgboost": {
+            "accuracy": 0.9296958581690357,
+            "f1": 0.9617752719781397,
+            "roc_auc": 0.9678563869222068
+        },
+        "mlp_neural_net": {
+            "accuracy": 0.9404707320800856,
+            "f1": 0.9675393408790025,
+            "roc_auc": 0.96198183731074
+        }
+    },
+    "best_model": "mlp_neural_net"
+}
