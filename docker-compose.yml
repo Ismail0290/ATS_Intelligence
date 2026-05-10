@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  # ─── FastAPI Backend ──────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # Update to your Supabase PostgreSQL connection string
+      DATABASE_URL: postgresql+asyncpg://postgres:PASSWORD@db.xxxxx.supabase.co:5432/postgres?ssl=require
+      JWT_SECRET: change-me-in-production-use-a-long-random-string
+      MODEL_DIR: ./models
+      SBERT_MODEL: all-MiniLM-L6-v2
+      DEBUG: "false"
+      ALLOWED_ORIGINS: '["http://localhost:3000", "https://ats-intelligence.vercel.app"]'
+    volumes:
+      - sbert_cache:/root/.cache/huggingface
+
+  # ─── Next.js Frontend ────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+
+volumes:
+  sbert_cache:
