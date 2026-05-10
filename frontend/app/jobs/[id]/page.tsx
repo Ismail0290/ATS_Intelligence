@@ -34,6 +34,10 @@ const ML_MODELS = [
   { value: "xgboost", label: "XGBoost (92.9% acc)" },
   { value: "random_forest", label: "Random Forest (89.5% acc)" },
   { value: "logistic_regression", label: "Logistic Regression (84.9% acc)" },
+  { value: "dnn", label: "DNN Neural Network" },
+  { value: "lstm", label: "LSTM Network" },
+  { value: "gru", label: "GRU Network" },
+  { value: "transformer", label: "Transformer Model" },
 ];
 
 export default function JobDetailPage() {

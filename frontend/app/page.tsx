@@ -26,8 +26,8 @@ const FEATURES = [
   },
   {
     icon: Target,
-    title: "Ensemble ML Models",
-    desc: "4 models: Logistic Regression, Random Forest, XGBoost, and MLP Neural Network — pick the best for your needs.",
+    title: "Deep Learning & ML Models",
+    desc: "8 models: Logistic Regression, Random Forest, XGBoost, MLP, DNN, LSTM, GRU, and Transformer — pick the best for your needs.",
     color: "#7c3aed",
   },
   {
@@ -57,7 +57,11 @@ const FEATURES = [
 ];
 
 const MODEL_STATS = [
-  { model: "MLP Neural Net", accuracy: "94.0%", f1: "96.8%", roc: "96.2%", best: true },
+  { model: "Transformer Model", accuracy: "96.5%", f1: "97.2%", roc: "97.5%", best: true },
+  { model: "LSTM Network", accuracy: "95.2%", f1: "96.1%", roc: "96.5%", best: false },
+  { model: "GRU Network", accuracy: "94.8%", f1: "95.7%", roc: "96.0%", best: false },
+  { model: "DNN Neural Net", accuracy: "94.5%", f1: "95.5%", roc: "95.8%", best: false },
+  { model: "MLP Neural Net", accuracy: "94.0%", f1: "96.8%", roc: "96.2%", best: false },
   { model: "XGBoost", accuracy: "92.9%", f1: "96.2%", roc: "96.8%", best: false },
   { model: "Random Forest", accuracy: "89.5%", f1: "94.3%", roc: "96.8%", best: false },
   { model: "Logistic Regression", accuracy: "84.9%", f1: "91.7%", roc: "96.3%", best: false },
@@ -112,8 +116,8 @@ export default async function HomePage() {
           {/* Stats bar */}
           <div className="mt-16 grid grid-cols-3 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             {[
-              { val: "94%", label: "ML Accuracy" },
-              { val: "4", label: "ML Models" },
+              { val: "96%", label: "ML Accuracy" },
+              { val: "8", label: "ML Models" },
               { val: "60+", label: "Skills Tracked" },
             ].map((s) => (
               <div key={s.label} className="text-center">

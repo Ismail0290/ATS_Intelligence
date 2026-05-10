@@ -96,7 +96,10 @@ class EvaluateRequest(BaseModel):
     @field_validator("model_name")
     @classmethod
     def validate_model(cls, v):
-        allowed = ("logistic_regression", "random_forest", "xgboost", "mlp_neural_net")
+        allowed = (
+            "logistic_regression", "random_forest", "xgboost", "mlp_neural_net",
+            "dnn", "lstm", "gru", "transformer"
+        )
         if v not in allowed:
             raise ValueError(f"model_name must be one of {allowed}")
         return v

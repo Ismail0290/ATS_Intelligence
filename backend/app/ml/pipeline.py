@@ -121,6 +121,8 @@ def compute_features_single(
         "missing_skills": missing,
         "jd_skills": jd_skills,
         "cand_skills": cand_skills,
+        "candidate_text": candidate_text,
+        "cand_emb": cand_emb,
     }
 
 

@@ -77,10 +77,12 @@ def create_app() -> FastAPI:
 
     @app.get("/health", tags=["health"])
     async def health():
+        models = model_loader.get_ml_models()
         return {
             "status": "ok",
             "version": settings.VERSION,
-            "models_loaded": list(model_loader.get_ml_models().keys()),
+            "models_loaded": list(models.keys()),
+            "models_info": {k: v["framework"] for k, v in models.items()}
         }
 
     return app
