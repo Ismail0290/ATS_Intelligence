@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# ML models
+*.pkl
+*.h5
+*.keras
+*.pt
+*.pth
+*.bin
+
+# Data
+data/
+datasets/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Mac
+.DS_Store
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Cache
+.cache/
